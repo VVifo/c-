@@ -3,28 +3,27 @@
 
 using namespace std;
 
-/* Треба зробити одновимірний динамічний массив із випадковими значеннями
-   та відсортувати його за спаданням */
+// You need to create a one-dimensional dynamic array with random values and sort it in descending order
 
 int main()
 {
 	srand(time(0));
-	int size = 10; // Розмір мвсиву
-	int* arr = new int[size]; // Створення динамічного масиву
+	int size = 10; // Array size
+	int* arr = new int[size]; // Create a dynamic array
 
-	// Заповнення масиву випадковими числами від 1 до розміру масива
+	// Fill the array with random numbers from 1 to the size of the array
 	for (int i = 0; i < size; i++) {
 		arr[i] = rand() % size + 1;
 	}
 
-	// Виведення не відсортованого масиву
+	// Output an unsorted array
 	for (int i = 0; i < size; i++) {
 		cout << arr[i] << " ";
 	}
 
 	cout << endl;
 
-	// Сортування масиву
+	// Sort array
 	for (int i = 0; i < size - 1; i++) {
 		for (int j = 0; j < size - i - 1; j++) {
 			if (arr[j] < arr[j + 1]) {
@@ -37,11 +36,11 @@ int main()
 
 	cout << endl;
 
-	// Виведення відсортованого масиву
+	// Output the sorted array
 	for (int i = 0; i < size; i++) {
 		cout << arr[i] << " ";
 	}
 
-	// Вивільнення пам'яті
+	// Free up memory
 	delete[] arr;
 }
